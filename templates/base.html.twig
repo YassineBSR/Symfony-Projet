@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/fontawesome.min.css">
+
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<header>
+    {% block header %}
+<!-- Navbar -->
+<nav class="navbar  navbar-expand border-bottom border-2 border-light">
+    <div class="container-fluid">
+      <h2 class="font-nav px-4">Dealgames</h2>
+      <form action="/createannonce" method="GET">
+        <button class="navbar-left btn btn-outline-danger" type="sumbit"> + Déposer une annonce</button>
+      </form>
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav px-2 me-auto">
+          <a class="nav-link h5 text-white px-3" aria-current="page" href="/">Acceuil</a>
+          <a class="nav-link h5 text-white px-3" href="/annonce">Annonces</a>
+          <a class="nav-link h5 text-white" href="#">A propos</a>
+        </div>
+      </div>
+      <button class="navbar-right btn btn-outline-danger" type="button">Se connecter</button>
+    </div>
+  
+  </nav>
+  <!-- Navbar -->
+    {% endblock %}
+</header>
+<body>
+    {% block body %}
+
+    {% endblock %}
+</body>
+{% block footer %}
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Dealgames</small>
+    </div>
+  </footer>
+{% endblock %}
 </html>

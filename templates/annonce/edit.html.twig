@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dealgames - Déposer une annonce{% endblock %}
+
+{% block body %}
+<h1 class="text-light">Modifier une annonce</h1>
+<div class="container text-light">
+    {{form_start(formvue)}}
+    {{form_widget(formvue)}}
+    <button type="submit" class="btn btn-primary mb-2">Envoyer</button>
+    {{form_end(formvue)}}
+</div>
+
+{% endblock %}

@@ -1,0 +1,190 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dealgames - Annonces{% endblock %}
+
+{% block header %}
+<!-- Navbar -->
+<nav class="navbar  navbar-expand border-bottom border-2 border-light">
+  <div class="container-fluid">
+    <h2 class="font-nav px-4">Dealgames</h2>
+    <form action="/createannonce" method="GET">
+      <button class="navbar-left btn btn-outline-danger" type="sumbit"> + Déposer une annonce</button>
+    </form>
+    <div class="collapse navbar-collapse">
+      <div class="navbar-nav px-2 me-auto">
+        <a class="nav-link h5 text-white px-3" aria-current="page" href="/">Acceuil</a>
+        <a class="nav-link h5 text-white px-3" href="/annonce">Annonces</a>
+        <a class="nav-link h5 text-white" href="#">A propos</a>
+      </div>
+    </div>
+    <button class="navbar-right btn btn-outline-danger" type="button">Se connecter</button>
+  </div>
+
+</nav>
+<!-- Navbar -->
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav ">
+      <h4>Parametre</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+      </ul>
+    </div>
+    <section class="col-sm-10">
+      <h1 class="text-white">Annonces</h1>
+      <div class="section-title text-center text-white p-5">
+        <h1 class="">Top Catégories</h1>
+        <hr class="">
+      </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="section-title text-center text-white p-5">
+        <h1 class="">Top Catégories</h1>
+        <hr class="">
+      </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="section-title text-center text-white p-5">
+        <h1 class="">Top Catégories</h1>
+        <hr class="">
+      </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
