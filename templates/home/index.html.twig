@@ -73,7 +73,7 @@
     {% for annonce in annonces %}
     <div class="col-md-3">
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{{ annonce.imageName ? vich_uploader_asset(annonce) : asset('uploads/placeholder.jpg') }}" alt="{{ annonce.title }}" class="h-75" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{ annonce.title }}</h5>
           <p class="card-text">{{ annonce.description }}</p>

@@ -6,6 +6,7 @@ use App\Entity\Annonce;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class AnnonceType extends AbstractType
 {
@@ -13,9 +14,19 @@ class AnnonceType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('description')
-            ->add('image')
+            ->add('description')  
         ;
+
+        $builder->add('imageFile', VichImageType::class, [
+            'required' => false,
+            'allow_delete' => true,
+            'delete_label' => '...',
+            'download_label' => '...',
+            'download_uri' => true,
+            'image_uri' => true,
+            // 'imagine_pattern' => '...',
+            // 'asset_helper' => true,
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
