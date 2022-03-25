@@ -19,14 +19,15 @@
     {% endblock %}
 </head>
 <header>
-    {% block header %}
-<!-- Navbar -->
-<nav class="navbar  navbar-expand border-bottom border-2 border-light">
+  {% block header %}
+  <!-- Navbar -->
+  <nav class="navbar  navbar-expand border-bottom border-2 border-light">
     <div class="container-fluid">
       <h2 class="font-nav px-4">Dealgames</h2>
-      <form action="/createannonce" method="GET">
-        <button class="navbar-left btn btn-outline-danger" type="sumbit"> + Déposer une annonce</button>
+      <form action="/annonce/create" method="GET">
+        <button class="navbar-left btn btn-outline-danger" type="submit"> + Déposer une annonce</button>
       </form>
+  
       <div class="collapse navbar-collapse">
         <div class="navbar-nav px-2 me-auto">
           <a class="nav-link h5 text-white px-3" aria-current="page" href="/">Acceuil</a>
@@ -34,12 +35,15 @@
           <a class="nav-link h5 text-white" href="#">A propos</a>
         </div>
       </div>
-      <button class="navbar-right btn btn-outline-danger" type="button">Se connecter</button>
+      <form action="/register" >
+        <button class="navbar-right btn btn-outline-danger" type="submit">Se connecter</button>
+    </form>
+      
     </div>
   
   </nav>
   <!-- Navbar -->
-    {% endblock %}
+  {% endblock %}
 </header>
 <body>
     {% block body %}
