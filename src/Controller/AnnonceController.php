@@ -52,7 +52,7 @@ class AnnonceController extends AbstractController
             $entityManagerInterface->persist($annonce);
             $entityManagerInterface->flush();
 
-            $this->addFlash('success' , 'Album Annonce enregistré !');
+            $this->addFlash('success' , 'Annonce enregistré !');
         }
         return $this->render('annonce/create.html.twig', [
             'formvue' => $form->createView(),
