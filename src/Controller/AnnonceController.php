@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Annonce;
 use App\Form\AnnonceType;
+use App\Repository\AnnonceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -59,7 +60,7 @@ class AnnonceController extends AbstractController
         ]);
     }
 
-    #[Route('/annonce/delete/{id}', name: 'app_annonce_dilete')]
+    #[Route('/annonce/delete/{id}', name: 'app_annonce_delete')]
     public function delete(EntityManagerInterface $entityManagerInterface, Annonce $annonce): Response
     {
         
@@ -73,5 +74,23 @@ class AnnonceController extends AbstractController
          
         );
     }
-   
+    #[Route('/annonce/show/{id}', name: 'app_annonce_show')]
+    public function show($id)
+    {
+        $annonce = $this->getDoctrine()->getRepository(Annonce::class);
+        $annonce = $annonce->find($id);
+  
+       if (!$annonce) {
+           throw $this->createNotFoundException(
+                   
+            'Aucun annonce pour l\'id: ' . $id
+
+           );
+       }
+
+       return $this->render(
+           'annonce/show.html.twig',
+           array('annonce' => $annonce)
+       );
+    }
 }
