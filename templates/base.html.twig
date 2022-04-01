@@ -21,10 +21,10 @@
 <header>
   {% block header %}
   <!-- Navbar -->
-  <nav class="navbar  navbar-expand border-bottom border-2 border-light">
+  <nav class="navbar navbar-expand border-bottom border-2 border-light">
     <div class="container-fluid">
       <h2 class="font-nav px-4">Dealgames</h2>
-      {% if app.user %} 
+      {% if app.user %}
       <form action="/annonce/create" method="GET">
         <button class="navbar-left btn btn-outline-danger" type="submit"> + Déposer une annonce</button>
       </form>
@@ -33,25 +33,28 @@
         <div class="navbar-nav px-2 me-auto">
           <a class="nav-link h5 text-white px-3" aria-current="page" href="/">Accueil</a>
           <a class="nav-link h5 text-white px-3" href="/annonce">Annonces</a>
-          <a class="nav-link h5 text-white" href="#">A propos</a>
+          {# <a class="nav-link h5 text-white" href="#">A propos</a> #}
         </div>
       </div>
-        {% if app.user %} 
-          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-             <p class="text-white">Email: {{ app.user.username }}</p>
-         {% endif %}
-        <form action="/logout">
-          <button class="navbar-right btn btn-outline-danger" type="submit">Se déconnecter</button>
-        </form>
-        
-       {% else %}
+      {% if app.user %}
+      {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+      <div class="navbar-nav me-auto px-2 border">
+        <p class="text-white h5 px-3">{{ app.user.username }}</p>
+      </div>
+
+      {% endif %}
+      <form action="/logout">
+        <button class="navbar-right btn btn-outline-danger" type="submit">Se déconnecter</button>
+      </form>
+
+      {% else %}
       <form action="/login">
-          <button class="navbar-right btn btn-outline-danger" type="submit">Se connecter</button>
-        </form>
-        <form action="/register">
-          <button class="navbar-right btn btn-outline-danger" type="submit">S'inscrire</button>
-        </form>
-{% endif %}
+        <button class="navbar-right btn btn-outline-danger" type="submit">Se connecter</button>
+      </form>
+      <form action="/register">
+        <button class="navbar-right btn btn-outline-danger" type="submit">S'inscrire</button>
+      </form>
+      {% endif %}
 
     </div>
 
@@ -60,17 +63,11 @@
   {% endblock %}
 </header>
 
-<body>
+
   {% block body %}
 
   {% endblock %}
-</body>
-{% block footer %}
-<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
-  <div class="container text-center">
-    <small>Copyright &copy; Dealgames</small>
-  </div>
-</footer>
-{% endblock %}
+
+
 
 </html>

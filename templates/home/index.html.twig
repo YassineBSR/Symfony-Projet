@@ -16,6 +16,7 @@
           <img src="../img/imgprojet.jpg"  class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title text-center">Consoles</h5>
+            <a class=" stretched-link" href="{{ path('app_annonce_consoles')}}"></a>
           </div>
         </div>
       </div>
@@ -24,6 +25,7 @@
           <img src="../img/imgprojet3.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title text-center">Accesoires</h5>
+            <a class=" stretched-link" href="{{ path('app_annonce_accesoires')}}"></a>
           </div>
         </div>
       </div>
@@ -32,6 +34,7 @@
           <img src="../img/imgprojet2.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title text-center">Jeux</h5>
+            <a class=" stretched-link" href="{{ path('app_annonce_jeux')}}"></a>
           </div>
         </div>
       </div>
@@ -47,8 +50,8 @@
   <div class="row row-cols-1 row-cols-md-4 g-4">
     {% for annonce in annonces %}
     <div class="col-md-3">
-      <div class="card">
-        <img src="{{ annonce.imageName ? vich_uploader_asset(annonce) : asset('uploads/placeholder.jpg') }}" alt="{{ annonce.title }}" class="h-75" alt="...">
+      <div class="card h-100">
+        <img src="{{ annonce.imageName ? vich_uploader_asset(annonce) : asset('uploads/placeholder.jpg') }}" alt="{{ annonce.title }}" class="h-70" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{ annonce.title }}</h5>
           <h6 class="card-title">{{ annonce.categorie.name }}</h6>

@@ -6,14 +6,13 @@ use App\Entity\Annonce;
 use App\Entity\Categorie;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class AnnonceType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    public function buildForm(FormBuilderInterface $builder, array $options,): void
     {
         $builder
             ->add('title')
@@ -22,7 +21,7 @@ class AnnonceType extends AbstractType
                 "class"=> Categorie::class,
                 "choice_label"=>"name"
             ]);
-
+           
         $builder->add('imageFile', VichImageType::class, [
             'required' => false,
             'allow_delete' => true,
