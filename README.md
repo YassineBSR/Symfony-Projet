@@ -14,3 +14,7 @@ Chaque utilisateur qui souhaite publier des annonces doit disposer d’un compte
 L’utilisateur est décrit par un nom, un prénom, une adresse électronique, un mot de passe, une date d’inscription. Il peut se voir attribuer un ou plusieurs rôle(s).
 
 Parmi les utilisateurs normaux, seul l’auteur d’une annonce à les droits d’administration (modification, suppression) sur celle-ci.
+
+Le rôle d’administrateur confère à son titulaire des droits sans restriction sur toutes les sections de l’application.
+
+L’association vous demande également créer la charte graphique et le design de l’application
